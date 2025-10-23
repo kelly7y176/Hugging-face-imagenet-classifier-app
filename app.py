@@ -10,10 +10,7 @@ iface = gr.Interface.load(
     f"huggingface/{model_name}",
     # NOTE: You MUST create an 'examples' folder and place 'dog.jpg' and 'cat.jpg'
     # inside it for these paths to work. Remove this block if you don't have them yet.
-    examples=[
-        "examples/dog.jpg",
-        "examples/cat.jpg"
-    ]
+    
 )
 
 # Launch the Gradio interface
