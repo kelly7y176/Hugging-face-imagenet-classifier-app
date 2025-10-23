@@ -1,28 +1,25 @@
 import gradio as gr
 
-# The model 'google/vit-base-patch16-224' is a Vision Transformer (ViT)
-# pre-trained on the massive ImageNet-21k dataset and fine-tuned on ImageNet-1k,
-# making it an excellent choice for general-purpose image classification.
-# Gradio's gr.Interface.load() handles everything, including:
-# - Downloading the model.
-# - Setting up the image-upload input component.
-# - Processing the image (resizing, normalization).
-# - Calling the model for inference.
-# - Displaying the classification results (labels and probabilities).
-
+# Define the ImageNet-trained model from the Hugging Face Hub
 model_name = "google/vit-base-patch16-224"
 
-# Load the model directly from the Hugging Face Hub using Gradio's helper function.
-# The `examples` argument provides sample images for the user to try out.
+# Load the model directly from the Hugging Face Hub.
+# Gradio automatically infers the input (Image) and output (Label) components
+# and handles all pre- and post-processing steps.
 iface = gr.Interface.load(
     f"huggingface/{model_name}",
-    title="ImageNet Classification Demo (Vision Transformer)",
-    description="Upload an image to classify it into one of the 1000 ImageNet categories using a Google ViT model.",
+    # NOTE: You MUST create an 'examples' folder and place 'dog.jpg' and 'cat.jpg'
+    # inside it for these paths to work. Remove this block if you don't have them yet.
     examples=[
-        "path/to/example_image_1.jpg", # You'll replace these with actual paths later
-        "path/to/example_image_2.jpg"
+        "examples/dog.jpg",
+        "examples/cat.jpg"
     ]
 )
 
 # Launch the Gradio interface
-iface.launch()
+# **KEY CHANGE:** setting share=False and server_name="0.0.0.0" is critical
+# for the app to be accessible by the Hugging Face Space container.
+iface.launch(
+    share=False,
+    server_name="0.0.0.0"
+)
