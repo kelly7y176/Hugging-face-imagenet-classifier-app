@@ -15,7 +15,7 @@ jobs:
           lfs: true
 
       - name: Sync with Hugging Face Space
-        uses: nateraw/huggingface-sync-action@v1
+        uses: uses: nateraw/huggingface-sync-action@main
         with:
           
           github_repo_id: 'kelly7y176/Hugging-face-imagenet-classifier-app' 
