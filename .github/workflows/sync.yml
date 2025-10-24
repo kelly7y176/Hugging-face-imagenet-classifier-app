@@ -1,7 +1,7 @@
 name: Sync to Hugging Face Hub
 
 on:
-  # Triggers the workflow on pushes to the 'main' branch
+  
   push:
     branches: [main]
 
@@ -9,25 +9,19 @@ jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
     steps:
-      # Checkout the GitHub repository code
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          lfs: true # Needed for potential large model files
+          lfs: true
 
-      # Sync files to the Hugging Face Space
       - name: Sync with Hugging Face Space
         uses: nateraw/huggingface-sync-action@v0.0.5
         with:
-          # Replace with your GitHub Username/RepoName
-          github_repo_id: 'https://github.com/kelly7y176/Hugging-face-imagenet-classifier-app'
+          
+          github_repo_id: 'kelly7y176/Hugging-face-imagenet-classifier-app' 
+          
 
-          # Replace with your Hugging Face Username/SpaceName
           huggingface_repo_id: 'tyuuu/imagenet-classifier-project'
-
-          # The Secret you created in Step 2.B
           hf_token: ${{ secrets.HF_TOKEN }} 
-
           repo_type: 'space'
           space_sdk: 'gradio'
-
