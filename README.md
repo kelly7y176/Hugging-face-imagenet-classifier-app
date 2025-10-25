@@ -1,3 +1,15 @@
+---
+title: Imagenet Classifier Project
+emoji: 👀
+colorFrom: green
+colorTo: indigo
+sdk: gradio
+sdk_version: "5.49.1" 
+app_file: app.py
+pinned: false
+license: apache-2.0
+---
+
 # 🖼️ Imagenet Classifier App
 
 This repository houses the code for an image classification application deployed on the Hugging Face Hub. 
@@ -69,7 +81,3 @@ A GitHub Actions workflow (`.github/workflows/sync.yml`) is set up to automate d
 
 # 📜 License
 This project is licensed under the **Apache-2.0 License**.
-
-# Reference
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
-
