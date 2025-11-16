@@ -30,6 +30,22 @@ The following metadata, defined in the Space repository, controls the environmen
 | App File | app.py | The main Python script that runs the Gradio app. |
 | License | apache-2.0 | The license under which the code is distributed. |
 
+## 💡 Key Features and Inputs
+
+This application now supports multiple input modalities and includes a backend logging feature for data analysis:
+
+### Input Modalities
+| Feature | Description |
+| :--- | :--- |
+| **Webcam Input** 📸 | Users can capture live images directly from their webcam for immediate classification. |
+| **Clipboard Input** 📋 | Images can be pasted directly into the input area from the system clipboard. |
+| **File Upload** | Standard support for uploading image files from the local file system. |
+
+### Backend Logging
+| Feature | Description |
+| :--- | :--- |
+| **Firebase Logging** 🔥 | Every classification prediction (input image, result, and score) is securely logged to a **Firebase** backend database for persistence and future analysis. |
+
 # 💻 Local Setup & Usage
 To run this application locally, you'll need Python and the project dependencies.
 
