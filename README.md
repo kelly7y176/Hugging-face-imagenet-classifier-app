@@ -16,6 +16,12 @@ This repository houses the code for an image classification application deployed
 It uses a pre-trained model to classify images based on the Imagenet dataset. 
 The interactive front-end is powered by Gradio.
 
+<!-- Cover -->
+<br />
+<div>
+   <img align="left" align="left" alt="HTML" width="100%" style="padding-right:10px;" src="https://i.imgur.com/zlihdJL.jpeg" />   
+</div>
+
 # 🚀 Hugging Face Space Configuration
 
 The following metadata, defined in the Space repository, controls the environment and appearance of the deployed application:
